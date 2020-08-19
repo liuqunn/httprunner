@@ -1,0 +1,42 @@
+[
+    {
+    "config": {
+        "name": "get_user_center_open_item",
+        "variables": {
+            
+        }
+    }
+},
+
+{
+    "test": {
+        "name": "get_user_center_open_item",
+        "request": {
+            "url": "${ENV(url)}",
+            "method": "GET",
+            "params": {
+                "deviceid": "${ENV(deviceid)}",
+                "ver": "${ENV(ver)}",
+                "pid": "${ENV(pid)}",
+                "logintoken":"${ENV(logintoken)}",
+                "account_id": "${ENV(username)}",
+                "mode": "${ENV(mode)}",
+                "language": "${ENV(language)}",
+                "lz": "${ENV(lz)}",
+                "hwdeviceid": "${ENV(hwdeviceid)}",
+                "TimeZoneName": "${ENV(TimeZoneName)}",
+                "TimeZoneId": "${ENV(TimeZoneId)}",
+                "version": "${ENV(version)}",
+                "model": "${ENV(model)}",
+                "type": "${ENV(type)}",
+                "m": "user",
+                "a": "get_user_center_open_item"
+          }
+        },
+        "validate": [
+            {"eq": ["status_code", 200]},
+            {"eq": ["content.ret", 0]}
+        ]
+    }
+}
+]

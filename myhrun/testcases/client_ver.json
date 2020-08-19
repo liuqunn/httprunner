@@ -1,0 +1,54 @@
+[
+   {
+    "config": {
+        "name": "testcase",
+        "variables": {},
+        "base_url": "https://b168.51ias.com"
+              }
+    },
+    {
+    "test": 
+        {
+            "name": "login",
+            "api": "api/login.json"
+        }
+    },
+    {"test": 
+        {
+            "name": "client_ver",
+            "variables":{    
+            }, 
+            "request": {
+                "url": "api.php",
+                "params": {
+                    "deviceid": "R_uHvdbuCxttA4RC0vaNdxdME9c4rSMV",
+                    "pid": "gloudphone",
+                    "version": "417200508",
+                    "ver": "417200508",
+                    "hwdeviceid": "00000000-6bb2-09f5-10d8-571e0033c587",
+                    "logintoken": "$tocken",
+                    "account_id": "22993570",
+                    "mode": "V1911A",
+                    "language": "zh",
+                    "lz": "73ccf97c9761f465e965427845ac2e8e",
+                    "m": "Anony",
+                    "client_type": "0",
+                    "a": "client_ver",
+                    "product": "4"
+                },
+            "method": "GET"
+            },
+            "validate": [
+                {
+                    "eq": [
+                        "status_code",
+                        200
+                    ]
+                }
+            ],
+            "extract":{
+                 
+            }
+        }
+  }
+]

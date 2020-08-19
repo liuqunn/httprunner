@@ -1,0 +1,44 @@
+[
+    {
+    "config": {
+        "name": "get_device_info",
+        "variables": {
+            
+        }
+    }
+},
+
+{
+    "test": {
+        "name": "get_device_info",
+        "request": {
+            "url": "${ENV(url)}",
+            "method": "GET",
+            "params": {
+                "deviceid": "${ENV(deviceid)}",
+                "ver": "${ENV(ver)}",
+                "pid": "${ENV(pid)}",
+                "logintoken":"${ENV(logintoken)}",
+                "account_id": "${ENV(username)}",
+                "mode": "${ENV(mode)}",
+                "language": "${ENV(language)}",
+                "lz": "${ENV(lz)}",
+                "hwdeviceid": "${ENV(hwdeviceid)}",
+                "TimeZoneName": "${ENV(TimeZoneName)}",
+                "TimeZoneId": "${ENV(TimeZoneId)}",
+                "version": "${ENV(version)}",
+                "model": "${ENV(model)}",
+                "type": "${ENV(type)}",
+                "m": "User",
+                "a": "get_device_info",
+                "controller": "1",
+                "gls": "1"
+          }
+        },
+        "validate": [
+            {"eq": ["status_code", 200]},
+            {"eq": ["content.ret", 0]}
+        ]
+    }
+}
+]

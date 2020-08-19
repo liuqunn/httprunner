@@ -1,0 +1,40 @@
+[
+    {
+    "config": {
+        "name": "tourist_tip",
+        "variables": {
+            
+        }
+    }
+},
+
+{
+    "test": {
+        "name": "tourist_tip",
+        "request": {
+            "url": "${ENV(url)}",
+            "method": "GET",
+            "params": {
+                "deviceid": "${ENV(deviceid)}",
+                "ver": "${ENV(ver)}",
+                "pid": "${ENV(pid)}",
+                "logintoken":"${ENV(logintoken)}",
+                "account_id": "${ENV(username)}",
+                "mode": "${ENV(mode)}",
+                "language": "${ENV(language)}",
+                "lz": "${ENV(lz)}",
+                "hwdeviceid": "${ENV(hwdeviceid)}",
+                "TimeZoneName": "${ENV(TimeZoneName)}",
+                "TimeZoneId": "${ENV(TimeZoneId)}",
+                "version": "${ENV(version)}",
+                "m": "Tips",
+                "a": "tourist_tip"
+          }
+        },
+        "validate": [
+            {"eq": ["status_code", 200]},
+            {"eq": ["content.ret", 0]}
+        ]
+    }
+}
+]

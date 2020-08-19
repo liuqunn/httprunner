@@ -1,0 +1,18 @@
+
+{
+  "config": {
+    "name": "testsuite",
+    "variables": {   
+    }
+  },
+  "testcases": [
+    {
+      "name": "get_reddot_list",
+      "testcase": "/testcases/get_reddot_list.json"
+    },
+    {
+      "name": "game_info",
+      "testcase": "/testcases/game_info.json"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+    "name": "login",
+    "request": {
+        "url": "api.php",
+        "params": {
+            "a": "login",
+            "password": "96e79218965eb72c92a549dd5a330112",
+            "hwdeviceid": "00000000-6bb2-09f5-10d8-571e0033c587",
+            "pid": "gloudphone",
+            "type": "Android",
+            "m": "User",
+            "deviceid": "00000000-6bb2-09f5-10d8-571e0033c587",
+            "version": "417200508",
+            "username": "22993570"
+        },
+        "method": "GET"
+    },
+    "validate": [
+        {
+            "eq": [
+                "status_code",
+                200
+            ]
+        }
+    ],
+    "extract":{
+        "tocken": "content.user_info.device_info.login_token"   
+    }
+}

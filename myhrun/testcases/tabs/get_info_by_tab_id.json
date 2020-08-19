@@ -1,0 +1,43 @@
+[
+    {
+    "config": {
+        "name": "get_info_by_tab_id",
+        "variables": {
+            
+        }
+    }
+},
+
+{
+    "test": {
+        "name": "get_info_by_tab_id",
+        "request": {
+            "url": "${ENV(url)}",
+            "method": "GET",
+            "params": {
+                "deviceid": "${ENV(deviceid)}",
+                "ver": "${ENV(ver)}",
+                "pid": "${ENV(pid)}",
+                "logintoken":"${ENV(logintoken)}",
+                "account_id": "${ENV(username)}",
+                "mode": "${ENV(mode)}",
+                "language": "${ENV(language)}",
+                "lz": "${ENV(lz)}",
+                "hwdeviceid": "${ENV(hwdeviceid)}",
+                "TimeZoneName": "${ENV(TimeZoneName)}",
+                "TimeZoneId": "${ENV(TimeZoneId)}",
+                "version": "${ENV(version)}",
+                "m": "tabs",
+                "asher_banner_tab_id": "163",
+                "row": "10",
+                "page": "1",
+                "a": "get_info_by_tab_id"
+          }
+        },
+        "validate": [
+            {"eq": ["status_code", 200]},
+            {"eq": ["content.ret", 0]}
+        ]
+    }
+}
+]

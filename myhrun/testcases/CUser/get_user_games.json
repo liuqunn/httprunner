@@ -1,0 +1,40 @@
+[
+    {
+    "config": {
+        "name": "get_user_games",
+        "variables": {
+            
+        }
+    }
+},
+
+{
+    "test": {
+        "name": "get_user_games",
+        "request": {
+            "url": "${ENV(url)}",
+            "method": "GET",
+            "params": {
+                "deviceid": "${ENV(deviceid)}",
+                "ver": "${ENV(ver)}",
+                "pid": "${ENV(pid)}",
+                "logintoken":"${ENV(logintoken)}",
+                "account_id": "${ENV(username)}",
+                "mode": "${ENV(mode)}",
+                "language": "${ENV(language)}",
+                "lz": "${ENV(lz)}",
+                "hwdeviceid": "${ENV(hwdeviceid)}",
+                "TimeZoneName": "${ENV(TimeZoneName)}",
+                "TimeZoneId": "${ENV(TimeZoneId)}",
+                "version": "${ENV(version)}",
+                "m": "Coupon",
+                "a": "get_user_games"
+          }
+        },
+        "validate": [
+            {"eq": ["status_code", 200]},
+            {"eq": ["content.ret", 0]}
+        ]
+    }
+}
+]
