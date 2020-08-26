@@ -22,18 +22,15 @@ m=tabs&a=get_tab_group&type=discover
 m=tabs&a=get_tab_group&type=game
 m=Client&a=region_list
 
-
-
-
-
-
-
-
-
-
-
-
-
+m=Client&a=pid_logo&client_type=0&product=4
+m=ScreenAd&a=get_screeen_ad_info&type=1
+m=Tim&a=test_login_to_tim&identifier=38007662
+m=advert&a=new_float_advert&type=1&tab_id=163
+m=tabs&a=get_info_by_tab_id&asher_banner_tab_id=111&page=1&row=10
+m=Coupon&a=coupon_center
+m=Achievemena=get_coupon_tab
+m=Achievement&a=lists&tab_id=19
+m=StatVisit&a=stat_click_common&string1=Tb&string2=HeadFuntionsAdapter
 
 
 

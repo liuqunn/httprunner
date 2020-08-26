@@ -1,0 +1,42 @@
+[
+    {
+    "config": {
+        "name": "stat_click_common",
+        "variables": {
+            
+        }
+    }
+},
+
+{
+    "test": {
+        "name": "stat_click_common",
+        "request": {
+            "url": "${ENV(url)}",
+            "method": "GET",
+            "params": {
+                "deviceid": "${ENV(deviceid)}",
+                "ver": "${ENV(ver)}",
+                "pid": "${ENV(pid)}",
+                "logintoken":"${ENV(logintoken)}",
+                "account_id": "${ENV(username)}",
+                "mode": "${ENV(mode)}",
+                "language": "${ENV(language)}",
+                "lz": "${ENV(lz)}",
+                "hwdeviceid": "${ENV(hwdeviceid)}",
+                "TimeZoneName": "${ENV(TimeZoneName)}",
+                "TimeZoneId": "${ENV(TimeZoneId)}",
+                "string1": "Tb",
+                "string2": "HeadFuntionsAdapter",
+                "version": "${ENV(version)}",
+                "m": "StatVisit",
+                "a": "stat_click_common"
+          }
+        },
+        "validate": [
+            {"eq": ["status_code", 200]},
+            {"eq": ["content.ret", 0]}
+        ]
+    }
+}
+]

@@ -1,0 +1,41 @@
+[
+    {
+    "config": {
+        "name": "pid_logo",
+        "variables": {
+            
+        }
+    }
+},
+{
+    "test": {
+        "name": "pid_logo",
+        "request": {
+            "url": "${ENV(url)}",
+            "method": "GET",
+            "params": {
+                "deviceid": "${ENV(deviceid)}",
+                "ver": "${ENV(ver)}",
+                "pid": "${ENV(pid)}",
+                "logintoken": "${ENV(logintoken)}",
+                "account_id": "${ENV(USERNAME)}",
+                "mode": "RMX2051",
+                "language": "${ENV(language)}",
+                "lz": "${ENV(lz)}",
+                "hwdeviceid": "${ENV(hwdeviceid)}",
+                "TimeZoneName": "${ENV(TimeZoneName)}",
+                "TimeZoneId": "${ENV(TimeZoneId)}",
+                "client_type": "0",
+                "product": "4",
+                "version": "${ENV(version)}",
+                "m": "Client",
+                "a": "pid_logo"
+          }
+        },
+        "validate": [
+            {"eq": ["status_code", 200]},
+            {"eq": ["content.ret", 0]}
+        ]
+    }
+}
+]
