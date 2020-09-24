@@ -1,14 +1,10 @@
-[
-    {
+{
     "config": {
         "name": "my_friend",
         "variables": {
             
         }
-    }
-},
-
-{
+    },
     "test": {
         "name": "my_friend",
         "request": {
@@ -38,4 +34,4 @@
         ]
     }
 }
-]
+

@@ -1,15 +1,11 @@
-[
-    {
+{
     "config": {
         "name": "game_info",
-        "variables": {
-            
-        }
-    }
-},
-
-{
-    "test": {
+        "variables": { 
+        },
+        "output":["foo3"]
+    },
+    "teststeps": [{
         "name": "game_info",
         "request": {
             "url": "${ENV(url)}",
@@ -36,6 +32,5 @@
             {"eq": ["status_code", 200]},
             {"eq": ["content.ret", 0]}
         ]
-    }
+    }]
 }
-]

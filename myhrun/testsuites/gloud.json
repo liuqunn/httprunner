@@ -7,12 +7,12 @@
   },
   "testcases": [
     {
-      "name": "get_reddot_list",
-      "testcase": "/testcases/get_reddot_list.json"
+      "name": "get_ad_info",
+      "testcase": "/testcases/Advert/get_ad_info.json"
     },
     {
       "name": "game_info",
-      "testcase": "/testcases/game_info.json"
+      "testcase": "/testcases/GameList/game_info.json"
     }
   ]
 }
