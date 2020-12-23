@@ -1,0 +1,31 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "game_info",
+    "uid" : "7876bbddfd174faa",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1606202157328,
+      "stop" : 1606202159565,
+      "duration" : 2237
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'username': '22993655'}" ]
+  }, {
+    "name" : "game_info",
+    "uid" : "25ce68a049045025",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1606202159570,
+      "stop" : 1606202161668,
+      "duration" : 2098
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'username': '22993570'}" ]
+  } ]
+}
