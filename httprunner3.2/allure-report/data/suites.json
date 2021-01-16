@@ -1,0 +1,43 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "testcases",
+    "children" : [ {
+      "name" : "game_info_test",
+      "children" : [ {
+        "name" : "TestCaseGloud",
+        "children" : [ {
+          "name" : "game_info",
+          "uid" : "7876bbddfd174faa",
+          "parentUid" : "330d2888224a60817ba8fc4002484035",
+          "status" : "passed",
+          "time" : {
+            "start" : 1606202157328,
+            "stop" : 1606202159565,
+            "duration" : 2237
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "{'username': '22993655'}" ]
+        }, {
+          "name" : "game_info",
+          "uid" : "25ce68a049045025",
+          "parentUid" : "330d2888224a60817ba8fc4002484035",
+          "status" : "passed",
+          "time" : {
+            "start" : 1606202159570,
+            "stop" : 1606202161668,
+            "duration" : 2098
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "{'username': '22993570'}" ]
+        } ],
+        "uid" : "330d2888224a60817ba8fc4002484035"
+      } ],
+      "uid" : "1116af378703070b5284c254a2afbb69"
+    } ],
+    "uid" : "b51346658ccdb9db01a6b5f6c12deab1"
+  } ]
+}

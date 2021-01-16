@@ -1,0 +1,93 @@
+{
+  "uid" : "7876bbddfd174faa",
+  "name" : "game_info",
+  "fullName" : "testcases.game_info_test.TestCaseGloud#test_start",
+  "historyId" : "f994bdf99609495197c98c4ac6616643",
+  "time" : {
+    "start" : 1606202157328,
+    "stop" : 1606202159565,
+    "duration" : 2237
+  },
+  "description" : "TestCase ID: 28087a77-5e7a-4e69-b7f6-58e4fee0366e",
+  "descriptionHtml" : "<p>TestCase ID: 28087a77-5e7a-4e69-b7f6-58e4fee0366e</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "TestCase ID: 28087a77-5e7a-4e69-b7f6-58e4fee0366e",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "step: game",
+      "time" : {
+        "start" : 1606202158028,
+        "stop" : 1606202159564,
+        "duration" : 1536
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "ae45be5b9d90736f",
+      "name" : "stderr",
+      "source" : "ae45be5b9d90736f.txt",
+      "type" : "text/plain",
+      "size" : 60536
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcases"
+  }, {
+    "name" : "suite",
+    "value" : "game_info_test"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCaseGloud"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-R3TF7IE"
+  }, {
+    "name" : "thread",
+    "value" : "16680-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcases.game_info_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "param",
+    "value" : "{'username': '22993655'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7876bbddfd174faa.json",
+  "parameterValues" : [ "{'username': '22993655'}" ]
+}

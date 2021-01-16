@@ -1,0 +1,21 @@
+[ {
+  "uid" : "25ce68a049045025",
+  "name" : "game_info",
+  "time" : {
+    "start" : 1606202159570,
+    "stop" : 1606202161668,
+    "duration" : 2098
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7876bbddfd174faa",
+  "name" : "game_info",
+  "time" : {
+    "start" : 1606202157328,
+    "stop" : 1606202159565,
+    "duration" : 2237
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
