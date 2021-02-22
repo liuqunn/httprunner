@@ -16,13 +16,13 @@ class TestCasesLogin(HttpRunner):
     config = (
         Config("login")
         .export(*["token"])
-        .base_url("https://b2.51ias.com")
+        .base_url("")
         )
         
     teststeps = [
         Step(
             RunRequest("login")
-            .get("/api.php")
+            .get("${ENV(url)}")
             .with_params(
                 **{
                     "password": "$password",

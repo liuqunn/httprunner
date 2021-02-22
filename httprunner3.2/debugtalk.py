@@ -12,9 +12,17 @@ import os
 #通用判断返回值ret及处理的方法
 def judgment_ret(res):
     ret = json.loads(res.text)["ret"]
-    if ret == "100000001":   #参数错误
+    if ret == "100313005":   #已经举报过该视频
         ret = 0
-    elif ret == "100313003":   #已经点在导致点赞失败
+    elif ret == "100313003":   #重复点赞/取消点赞 的ret返回值
+        ret = 0
+    elif ret == -1001:   #浮动广告没有配置
+        ret = 0
+    elif ret == -1:   #get_advert_entrance 广告已经关闭
+        ret = 0
+    elif ret == -1003:   #new_account_gift 老用户不发福利
+        ret = 0
+    elif ret == -1000:   #没有绑定手机号
         ret = 0
 
     return ret

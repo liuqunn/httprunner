@@ -1,5 +1,3 @@
-# 获取某个用户的视频接口
-
 import pytest
 import os
 import sys
@@ -11,7 +9,7 @@ from testcases.public_api.login_test import TestCasesLogin   #引入login类，�
 
 
 
-class TestCaseGetUserVideos(HttpRunner):  #更改为与接口相关的名字，方便以后引用（例如引用login接口需要先导入类名）
+class TestCaseCouponTipsCoupon(HttpRunner):  #更改为与接口相关的名字，方便以后引用（例如引用login接口需要先导入类名）
     @pytest.mark.parametrize(
         "param",
         Parameters(
@@ -23,10 +21,10 @@ class TestCaseGetUserVideos(HttpRunner):  #更改为与接口相关的名字，�
     def test_start(self, param):
         super().test_start(param)
     config = (
-        Config("get_user_videos")
+        Config("tips_coupon")
         .variables(
         **{
-            "username": "$username",     #在此文件中引用其他测试用例，需要定义其他用例中引用的参数
+            "username": "$username",     #在此文件中引用其他测试用例，需要定义本次用例中引用的参数
             "password": "$password"
         }
     )
@@ -39,7 +37,7 @@ class TestCaseGetUserVideos(HttpRunner):  #更改为与接口相关的名字，�
             .export(*["token"])
         ),
         Step(
-            RunRequest("get_user_videos")
+            RunRequest("tips_coupon")
             .with_variables(
                 **{   
                 }
@@ -59,18 +57,17 @@ class TestCaseGetUserVideos(HttpRunner):  #更改为与接口相关的名字，�
                     "TimeZoneName": "${ENV(TimeZoneName)}",
                     "TimeZoneId": "${ENV(TimeZoneId)}",
                     "version": "${ENV(version)}",
-                    "m": "CUser",
-                    "a": "get_user_videos",
-                    "Sint": "27",
-                    "page": "1",
-                    "rows": "10"
+                    "brand": "${ENV(brand)}",
+                    "Sint": "29",
+                    "m": "Coupon",
+                    "a": "tips_coupon"
                 }
             ) 
             .validate()
             .assert_equal("status_code", 200)
-            .assert_equal("${judgment_ret($response)}",0)
+            .assert_equal("${judgment_ret($response)}",100)
         )
     ]
 
 if __name__ == "__main__":
-    TestCaseGetUserVideos().test_start("")
+    TestCaseCouponTipsCoupon().test_start()

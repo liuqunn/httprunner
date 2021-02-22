@@ -1,4 +1,4 @@
-# 获取某个用户的视频接口
+# 视频中心type=new下的所有视频
 
 import pytest
 import os
@@ -11,7 +11,7 @@ from testcases.public_api.login_test import TestCasesLogin   #引入login类，�
 
 
 
-class TestCaseGetUserVideos(HttpRunner):  #更改为与接口相关的名字，方便以后引用（例如引用login接口需要先导入类名）
+class TestCaseShareVideoCenter(HttpRunner):  #更改为与接口相关的名字，方便以后引用（例如引用login接口需要先导入类名）
     @pytest.mark.parametrize(
         "param",
         Parameters(
@@ -23,7 +23,7 @@ class TestCaseGetUserVideos(HttpRunner):  #更改为与接口相关的名字，�
     def test_start(self, param):
         super().test_start(param)
     config = (
-        Config("get_user_videos")
+        Config("share_video_center")
         .variables(
         **{
             "username": "$username",     #在此文件中引用其他测试用例，需要定义其他用例中引用的参数
@@ -39,7 +39,7 @@ class TestCaseGetUserVideos(HttpRunner):  #更改为与接口相关的名字，�
             .export(*["token"])
         ),
         Step(
-            RunRequest("get_user_videos")
+            RunRequest("share_video_center")
             .with_variables(
                 **{   
                 }
@@ -47,7 +47,7 @@ class TestCaseGetUserVideos(HttpRunner):  #更改为与接口相关的名字，�
             .get("${ENV(url)}")
             .with_params(
                 **{
-                    "deviceid": "${ENV(deviceid)}",
+                     "deviceid": "${ENV(deviceid)}",
                     "ver": "${ENV(ver)}",
                     "pid": "${ENV(pid)}",
                     "logintoken": "$token",        
@@ -59,11 +59,12 @@ class TestCaseGetUserVideos(HttpRunner):  #更改为与接口相关的名字，�
                     "TimeZoneName": "${ENV(TimeZoneName)}",
                     "TimeZoneId": "${ENV(TimeZoneId)}",
                     "version": "${ENV(version)}",
-                    "m": "CUser",
-                    "a": "get_user_videos",
+                    "m": "video",
+                    "a": "share_video_center",
                     "Sint": "27",
                     "page": "1",
-                    "rows": "10"
+                    "rows": "10",
+                    "type": "new"
                 }
             ) 
             .validate()
@@ -73,4 +74,4 @@ class TestCaseGetUserVideos(HttpRunner):  #更改为与接口相关的名字，�
     ]
 
 if __name__ == "__main__":
-    TestCaseGetUserVideos().test_start("")
+    TestCaseShareVideoCenter().test_start("")

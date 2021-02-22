@@ -37,7 +37,7 @@ class TestCaseGetMyVideo(HttpRunner):  #更改为与接口相关的名字，方�
         Step(
             RunTestCase("login function")
             .call(TestCasesLogin)          #调用login接口
-            .export(*["token","username"])
+            .export(*["token"])
         ),
         Step(
             RunRequest("get_my_video")
@@ -70,7 +70,7 @@ class TestCaseGetMyVideo(HttpRunner):  #更改为与接口相关的名字，方�
             .with_jmespath("body.video_list.my_video","MyVideo")   #提取响应的返回值
             .validate()
             .assert_equal("status_code", 200)
-            .assert_equal("body.ret", "${judgment_ret($response)}")  #统一用judgment_ret判断ret
+            .assert_equal("${judgment_ret($response)}",0)  #统一用judgment_ret判断ret
         ),
 
        Step(
@@ -107,7 +107,7 @@ class TestCaseGetMyVideo(HttpRunner):  #更改为与接口相关的名字，方�
             )
             .validate()
             .assert_equal("status_code", 200)
-            .assert_equal("body.ret", "${judgment_ret($response)}")
+            .assert_equal("${judgment_ret($response)}",0)
         )
     ]
 

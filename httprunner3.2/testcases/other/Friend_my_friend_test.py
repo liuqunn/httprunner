@@ -1,5 +1,3 @@
-# 视频中心type=new下的所有视频
-
 import pytest
 import os
 import sys
@@ -11,7 +9,7 @@ from testcases.public_api.login_test import TestCasesLogin   #引入login类，�
 
 
 
-class TestCaseShareVideoCenter(HttpRunner):  #更改为与接口相关的名字，方便以后引用（例如引用login接口需要先导入类名）
+class TestCaseFriendMyFriend(HttpRunner):  #更改为与接口相关的名字，方便以后引用（例如引用login接口需要先导入类名）
     @pytest.mark.parametrize(
         "param",
         Parameters(
@@ -23,10 +21,10 @@ class TestCaseShareVideoCenter(HttpRunner):  #更改为与接口相关的名字�
     def test_start(self, param):
         super().test_start(param)
     config = (
-        Config("share_video_center")
+        Config("my_friend")
         .variables(
         **{
-            "username": "$username",     #在此文件中引用其他测试用例，需要定义其他用例中引用的参数
+            "username": "$username",     #在此文件中引用其他测试用例，需要定义本次用例中引用的参数
             "password": "$password"
         }
     )
@@ -36,10 +34,10 @@ class TestCaseShareVideoCenter(HttpRunner):  #更改为与接口相关的名字�
         Step(
             RunTestCase("login function")
             .call(TestCasesLogin)          #调用login接口
-            .export(*["token","username"])
+            .export(*["token"])
         ),
         Step(
-            RunRequest("share_video_center")
+            RunRequest("my_friend")
             .with_variables(
                 **{   
                 }
@@ -47,7 +45,7 @@ class TestCaseShareVideoCenter(HttpRunner):  #更改为与接口相关的名字�
             .get("${ENV(url)}")
             .with_params(
                 **{
-                     "deviceid": "${ENV(deviceid)}",
+                    "deviceid": "${ENV(deviceid)}",
                     "ver": "${ENV(ver)}",
                     "pid": "${ENV(pid)}",
                     "logintoken": "$token",        
@@ -59,19 +57,18 @@ class TestCaseShareVideoCenter(HttpRunner):  #更改为与接口相关的名字�
                     "TimeZoneName": "${ENV(TimeZoneName)}",
                     "TimeZoneId": "${ENV(TimeZoneId)}",
                     "version": "${ENV(version)}",
-                    "m": "video",
-                    "a": "share_video_center",
-                    "Sint": "27",
-                    "page": "1",
-                    "rows": "10",
-                    "type": "new"
+                    "brand": "${ENV(brand)}",
+                    "Sint": "29",
+                    "type": "1",
+                    "m": "Friend",
+                    "a": "my_friend"
                 }
             ) 
             .validate()
             .assert_equal("status_code", 200)
-            .assert_equal("body.ret", "${judgment_ret($response)}")
+            .assert_equal("${judgment_ret($response)}",0)
         )
     ]
 
 if __name__ == "__main__":
-    TestCaseShareVideoCenter().test_start("")
+    TestCaseFriendMyFriend().test_start()
